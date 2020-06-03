@@ -29,5 +29,4 @@ func main() {
 
 	fmt.Println(checkingAccount, checkingAccount1, checkingAccount2)
 
-
 }
