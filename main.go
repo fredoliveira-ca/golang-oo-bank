@@ -19,16 +19,27 @@ func main() {
 	account.balance = 500
 
 	fmt.Println(account.Withdraw(600))
-
+	fmt.Println(account.Deposit(200))
+	fmt.Println(account.Withdraw(600))
 }
 
 // Withdraw is a function for withdraw money from the balance
-func (account *CheckingAccount) Withdraw(value float64) string {
+func (account *CheckingAccount) Withdraw(value float64) (string, string, float64) {
 	isValidWithdraw := value > 0 && value <= account.balance
 	if(isValidWithdraw) {
 		account.balance -= value
-		return "Success!" + " Your new balance is: " + fmt.Sprintf("%f", account.balance)
+		return "Success!", "Your balance was updated.", account.balance
 	} else {
-		return "No sufficient balance." + " Your new balance is: " + fmt.Sprintf("%f", account.balance)
+		return "Failure", "No sufficient balance.", account.balance
+	}
+}
+
+// Deposit is a function for deposit money into the balance
+func (account *CheckingAccount) Deposit(value float64) (string, string, float64) {
+	if value > 0 {
+		account.balance += value
+		return "Success!", "Your balance was updated.", account.balance
+	} else {
+		return "Failure", "No sufficient balance.", account.balance
 	}
 }
