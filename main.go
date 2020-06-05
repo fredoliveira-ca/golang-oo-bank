@@ -26,7 +26,13 @@ func main() {
 	
 	checkingAccount2 := CheckingAccount{ "Fred Oliveira", 1234, 58096, 1, 897.32 }
 	
-
 	fmt.Println(checkingAccount, checkingAccount1, checkingAccount2)
+
+	var someoneAccount *CheckingAccount
+	someoneAccount = new(CheckingAccount)
+	someoneAccount.name = "Jeseph"
+	someoneAccount.balance = "432.12"
+
+	fmt.Println(someoneAccount)
 
 }
