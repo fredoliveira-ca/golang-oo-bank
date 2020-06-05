@@ -9,10 +9,12 @@ import (
 func main() {
 	account := ac.CheckingAccount{}
 	account.Person = cl.Person{Name: "Fred"}
-	account.Balance = 500
+	account.Deposit(500)
 
 	person2 := cl.Person{Name: "Joly"}
-	account2 := ac.CheckingAccount{Person: person2, Balance: 500}
+	account2 := ac.CheckingAccount{Person: person2}
+	account2.Deposit(500)
+	fmt.Println("My balance is", account.GetBalance())
 
 	fmt.Println(account.Withdraw(600))
 	fmt.Println(account.Deposit(200))
