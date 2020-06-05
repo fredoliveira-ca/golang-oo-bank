@@ -1,8 +1,10 @@
 package account
 
+import "bank/client"
+
 // CheckingAccount is a representation of a account type
 type CheckingAccount struct {
-	Name 			string
+	Person 			client.Person
 	Branch 			int
 	Account 		int
 	AccountDigit 	int
