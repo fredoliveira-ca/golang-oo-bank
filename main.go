@@ -31,8 +31,10 @@ func main() {
 	var someoneAccount *CheckingAccount
 	someoneAccount = new(CheckingAccount)
 	someoneAccount.name = "Jeseph"
-	someoneAccount.balance = "432.12"
+	someoneAccount.balance = 432.12
 
+	fmt.Println(&someoneAccount)
+	fmt.Println(*someoneAccount)
 	fmt.Println(someoneAccount)
 
 }
